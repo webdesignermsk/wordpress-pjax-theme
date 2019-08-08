@@ -7,8 +7,8 @@
     <?php /*
         Dont forget to change dta-namespace
     */ ?>   
-    <div class="app-container" data-namespace="blog-article">
-        <?php/*=====WRITE YOUR CODE HERE=====*/?>
+    <div id="app" class="app-container" data-namespace="blog-article">
+        <?php /*=====WRITE YOUR CODE HERE=====*/ ?>
             
 			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<div class="content">
@@ -17,7 +17,7 @@
 				</div>
 			</div>
             
-        <?php/*=====END OF YOUR CODE=====*/?>
+        <?php /*=====END OF YOUR CODE=====*/ ?>
     </div>
     <?php /*==============================================*/ ?>
 

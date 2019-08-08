@@ -49,7 +49,7 @@ function onPageEnter(){
 
 function onEnterInit(){
   $(window).scrollTop(0);
-  let name = $('#app-container').data('namespace');
+  var name = $('#app').data('namespace');
   console.log(name);
   $('body').removeClass("loading");
   if(name){
@@ -62,7 +62,7 @@ function onEnterInit(){
   }
 }
 function onLeaveInit(){
-  let name = $('#app-container').data('namespace');
+  let name = $('#app').data('namespace');
   $('body').addClass("loading");
   $('body').removeClass("ak-"+name);
   if(name){
@@ -74,30 +74,5 @@ function onLeaveInit(){
   }
 }
 
-
-/*=============VIEWS==============*/
-
-/*custom views*/
-var example = {
-  name : 'example',
-  onEnter : function(){
-    console.log('example enter');
-  },
-  onLeave : function(){
-    console.log('example leave');
-  }
-};
-func.push(example);
-
-var home = {
-  name : 'home',
-  onEnter : function(){
-    console.log('home enter');
-  },
-  onLeave : function(){
-    console.log('home leave');
-  }
-};
-func.push(home);
-/*end of custom views*/
-
+//on first enter 
+onEnterInit();

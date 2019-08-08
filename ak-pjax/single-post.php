@@ -8,12 +8,13 @@
         Dont forget to change dta-namespace
     */ ?>   
     <div class="app-container" data-namespace="single-post">
-        <?php/*=====WRITE YOUR CODE HERE=====*/?>
+        <?php /*=====WRITE YOUR CODE HERE=====*/ ?>
+            <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                <h1><?php echo the_title(); ?></h1>
+                <?php the_content(); ?>
+            </div>
             
-            <h1><?php echo the_title(); ?></h1>
-            <?php the_content(); ?>
-            
-        <?php/*=====END OF YOUR CODE=====*/?>
+        <?php /*=====END OF YOUR CODE=====*/ ?>
     </div>
     <?php /*==============================================*/ ?>
 

@@ -7,8 +7,8 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-	<header id="header" role="banner" class="menu-closed">
-		<?php wp_nav_menu( array('menu_id'=>'main-nav','container_class' => 'main-nav','theme_location' => 'full-screen-menu') ); ?>
+	<header id="header">
+		<?php wp_nav_menu( array('menu_id'=>'main-nav','container_class' => 'main-nav','theme_location' => 'main-menu') ); ?>
 	</header>
 
 	<div id="main">

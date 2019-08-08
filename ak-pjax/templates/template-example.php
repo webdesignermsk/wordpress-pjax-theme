@@ -13,12 +13,14 @@
 	<?php /*
 		Dont forget to change dta-namespace
 	*/ ?>	
-    <div id="app-container" class="app-container" data-namespace="example">
-  		<?php/*=====WRITE YOUR CODE HERE=====*/?>
+    <div id="app" class="app-container" class="app-container" data-namespace="example">
+  		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+  		<?php /*=====WRITE YOUR CODE HERE=====*/ ?>
 			
 			<h1>EXAMPLE PAGE</h1>
 
-		<?php/*=====END OF YOUR CODE=====*/?>
+		<?php /*=====END OF YOUR CODE=====*/ ?>
+		</div>
     </div>
     <?php /*==============================================*/ ?>
 

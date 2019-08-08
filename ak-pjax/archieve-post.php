@@ -5,7 +5,7 @@ Template Name: Blog Archieve
 ?>
     <?php get_header(); ?>
     <div id="app-wrapper" role="main">
-        <div class="app-container" data-namespace="blog-archieve">
+        <div id="app" class="app-container" data-namespace="blog-archieve">
             <?php query_posts('post_type=post&post_status=publish&posts_per_page=12&paged='. get_query_var('paged')); ?>
             <?php if( have_posts() ): ?>
             <?php $post_counter = 0 ; ?>
@@ -47,8 +47,8 @@ Template Name: Blog Archieve
                         <div class="blog-archieve-article">
                             <div class="article-img-block" style="background-image:url(<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full' ); ?>);"></div>
                             <div class="article-text-block"><span class="lifestyle-text"><?php 
-								$categorie = get_the_category();
-								if ( ! empty( $categorie ) ) echo esc_html( $categorie[0]->name );?></span>
+								$category = get_the_category();
+								if ( ! empty( $category ) ) echo esc_html( $category[0]->name );?></span>
                                 <h3><?php the_title(); ?></h3>
                                 <p class="article-excerpt"><?php echo get_field("excerpt"); ?></p>
                             </div>
@@ -71,4 +71,3 @@ Template Name: Blog Archieve
         </div>
     </div>
     <?php get_footer(); ?>
-<script src="/wp-content/themes/ak_pjax/js/views/archieve.js"></script>

@@ -1,6 +1,6 @@
 	</div>
 
-	<footer id="footer" class="footer">
+	<footer id="footer">
 		Alex Kershkov, 2019
 	</footer>
 
