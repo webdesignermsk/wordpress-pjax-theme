@@ -1,0 +1,32 @@
+@keyframes pulseAnimation
+	0%
+		opacity: 0
+	50%
+		opacity: 1
+	100%
+		opacity: 0
+
+.lazy-pulse
+	&:before,&:after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		z-index: 5
+		width: 100%
+		height: 100%
+		background-color: #efefef
+		transition: 0.3s linear
+	&:after
+		background-color: #e2e2e2
+		animation: pulseAnimation 2s infinite
+	&.loaded
+		&:before, &:after
+			opacity: 0
+			animation: none
+		&:after
+			display: none
+
+
+.lazy-img
+	&__wrapper

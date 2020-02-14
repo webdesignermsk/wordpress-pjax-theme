@@ -28,9 +28,9 @@ if ( ! empty( $comments_by_type['pings'] ) ) :
 $ping_count = count( $comments_by_type['pings'] ); 
 ?>
 <section id="trackbacks-list" class="comments">
-<h3 class="comments-title"><?php echo '<span class="ping-count">' . $ping_count . '</span> ' . ( $ping_count > 1 ? __( 'Trackbacks', 'ak_pjax' ) : __( 'Trackback', 'ak_pjax' ) ); ?></h3>
+<h3 class="comments-title"><?php echo '<span class="ping-count">' . $ping_count . '</span> ' . ( $ping_count > 1 ? __( 'Trackbacks', 'blank-theme' ) : __( 'Trackback', 'blank-theme' ) ); ?></h3>
 <ul>
-<?php wp_list_comments( 'type=pings&callback=ak_pjax_custom_pings' ); ?>
+<?php wp_list_comments( 'type=pings&callback=blank-theme_custom_pings' ); ?>
 </ul>
 </section>
 <?php 

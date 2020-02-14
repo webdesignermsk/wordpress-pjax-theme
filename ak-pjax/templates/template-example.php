@@ -13,7 +13,7 @@
 	<?php /*
 		Dont forget to change dta-namespace
 	*/ ?>	
-    <div id="app" class="app-container" class="app-container" data-namespace="example">
+    <div id="app" class="app-container" data-namespace="example">
   		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   		<?php /*=====WRITE YOUR CODE HERE=====*/ ?>
 			

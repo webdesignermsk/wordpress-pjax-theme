@@ -1,0 +1,68 @@
+.form
+	.nf-form-content
+		.nf-field
+			line-height: 0
+		.label-above .nf-field-label
+			margin-bottom: 5px
+			label
+				font-weight: 400
+				font-size: $default-font-size
+				line-height: 1.3em
+		.nf-field-element
+			input,textarea
+				padding: 5px
+				border-radius: 3px
+			input
+				height: 40px
+			textarea
+				height: 75px
+		.nf-field-container
+			margin-bottom: 15px
+		.submit-wrap
+			input
+				text-transform: uppercase
+				background-color: $color-theme-5
+				border: 2px solid #FFFFFF
+				width: 285px
+				max-width: 100%
+				font-weight: 600
+				cursor: pointer
+				font-size: 16px
+				font-family: $font-family-base
+				-webkit-appearance: none
+				&:hover
+					color: #FFFFFF
+					background-color: $color-theme-1
+		.nf-error.field-wrap .nf-field-element:after
+			bottom: 0
+			top: 0
+			right: 0
+			height: 100%
+			border-radius: 3px
+			line-height: 44px
+		.nf-error.textarea-wrap
+			.nf-field-element
+				&:after
+					line-height: 75px
+
+	&--big
+		.nf-form-content
+			.nf-field-element
+				input
+					height: 60px
+			.submit-wrap
+				input
+					border: 0px solid transparent
+					width: 285px
+			.nf-error.field-wrap .nf-field-element:after
+				line-height: 60px
+	&__policy
+		font-size: 12px
+		margin-top: 0
+		margin-left: 5px
+	.nf-error-msg,.nf-form-fields-required
+		font-size: 12px
+		margin-top: 0
+		margin-left: 5px
+	nf-field .nf-error-msg
+		margin-left: 0

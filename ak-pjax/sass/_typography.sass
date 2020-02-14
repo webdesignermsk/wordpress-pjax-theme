@@ -1,0 +1,144 @@
+html, body
+  -webkit-overflow-scrolling: touch
+
+body
+	font-family: $font-family-base
+	font-size: $default-font-size
+	font-weight: 400
+	line-height: $default-line-height
+	letter-spacing: 0.03em
+	color: $default-text-color
+	-webkit-font-smoothing: antialiased
+  	-moz-osx-font-smoothing: grayscale
+  	-webkit-backface-visibility: hidden
+  	-webkit-tap-highlight-color: transparent
+
+h1,h2,h3,h4,h5
+	font-weight: 400
+
+p,.p
+	font-size: $default-p-font-size
+
+.txt--xs,.txt--xs *
+	font-size: $txt-font-size-xs
+	line-height: $default-line-height
+.txt--sm,.txt--sm *
+	font-size: $txt-font-size-sm
+	line-height: $default-line-height
+.txt--md,.txt--md *
+	font-size: $txt-font-size-md
+	line-height: $default-line-height
+.txt--lg,.txt--lg *
+	font-size: $txt-font-size-lg
+	line-height: $default-line-height
+
+.txt--white
+	color: #FFFFFF
+	a
+		color: #FFFFFF
+
+.txt--light-grey
+	color: $color-theme-4
+	a
+		color: $color-theme-4
+
+.txt--center
+	text-align: center
+.txt--bold
+	font-weight: 600
+
+.title
+	font-size: 48px
+	line-height: 1.3em
+	+max-screen($breakpoint-md)
+	+max-screen($breakpoint-sm)
+
+.title--sm
+	font-size: $txt-font-size-md
+	line-height: $default-line-height
+	font-weight: 600
+	+max-screen($breakpoint-md)
+	+max-screen($breakpoint-sm)
+
+
+.subtitle
+	font-size: 13px
+	line-height: 1.4em
+	letter-spacing: 0.2em
+	text-transform: uppercase
+	+max-screen($breakpoint-md)
+
+	+max-screen($breakpoint-sm)
+		font-size: 10px
+
+.link--underline
+	position: relative
+	&:before
+		content: ''
+		position: absolute
+		bottom: 0
+		right: 0
+		width: 100%
+		height: 1px
+		background-color: #000
+		transition: 0.2s ease-out
+	&:hover:before
+		width: 0
+
+.content-block
+	p,h1,h2,h3,h4,h5,h6
+		padding: 11px 0
+	h1,h2,h3,h4,h5,h6
+		font-size: $txt-font-size-md
+		line-height: $default-line-height
+		font-weight: 600
+		padding-top: 30px
+	a
+		color: $color-theme-1
+		text-decoration: underline
+		overflow-wrap: break-word
+		word-wrap: break-word
+	ul
+		font-size: $default-p-font-size
+		line-height: $default-line-height
+		li
+			display: block
+			padding-left: 25px
+			margin-bottom: 20px
+			&:before
+				content: ''
+				background-color: $color-theme-1
+				width: 5px 
+				height: 5px
+				min-width: 5px
+				border-radius: 50%
+				margin-right: 10px
+				margin-bottom: 0.23em
+				display: inline-block
+			ul
+				margin-top: 10px
+	ol
+		list-style: none
+		counter-reset: my-counter
+		font-size: $default-p-font-size
+		line-height: $default-line-height
+		li
+			counter-increment: my-counter
+			padding-left: 25px
+			margin-bottom: 20px
+			&:before
+				content: counter(my-counter) "."
+				color: $color-theme-1
+				margin-right: 10px
+				margin-top: 8px
+	code
+		margin: 11px 0
+		font-size: $default-p-font-size
+		line-height: $default-line-height
+		padding: 2px 4px
+		border: 1px solid #dde4e9
+		background-color: #F6F6F6
+		color: #232527
+		display: inline-block
+	pre
+		white-space: pre-wrap

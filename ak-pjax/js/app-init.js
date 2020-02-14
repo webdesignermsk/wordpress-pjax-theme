@@ -34,7 +34,7 @@ Barba.Pjax.getTransition = function() {
     return AppTransition;
 };
 
-Barba.Pjax.start();
+//Barba.Pjax.start();
 
 /*=========================================================*/
 

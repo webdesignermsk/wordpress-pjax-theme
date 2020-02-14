@@ -1,0 +1,81 @@
+.footer
+	&__main
+		background-color: $color-theme-2
+		.row
+			padding-top: 85px
+			padding-bottom: 60px
+		&__nav
+			ul
+				list-style-type: none
+				columns: 2
+				margin-top: 10px
+				margin-left: -(2*$indent-col-lg)
+				+max-screen($breakpoint-lg)
+					margin-left: 0
+			li
+				padding-top: 15px
+				&:before
+					content: '►'
+					font-size: 7px
+					margin-right: 4px
+					vertical-align: middle
+			a
+				transition: 0.2s ease-out
+				&:hover
+					color: $color-theme-1
+		&__social
+			margin-top: 10px
+			&__row
+				display: block
+				margin-top: 15px
+				transition: 0.2s ease-out
+				&:hover
+					color: $color-theme-1
+				i 
+					line-height: 1em
+					vertical-align: middle
+					svg
+						margin-right: 5px
+						height: 16px
+						width: auto
+						path
+							fill: $color-theme-4
+	&__copyright
+		background-color: $color-theme-3
+		padding: 15px 0
+
+	&__logo
+		max-width: 105px
+		display: block
+		margin-bottom: 30px
+		&__img
+			width: 100%
+
+.social-bar
+	display: flex
+	margin-top: 3em
+	li
+		margin-right: 10px
+	a
+		position: relative
+		display: block
+		width: 30px
+		height: 30px
+		border-radius: 50%
+		background-color: $color-theme-4
+		line-height: 1em
+		transition: 0.3s ease-out
+		&:hover
+			background-color: $color-theme-1
+	i 
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translateX(-50%) translateY(-50%)
+		svg
+			height: 16px
+			width: auto
+			path
+				fill: $color-theme-2
+						
+						
