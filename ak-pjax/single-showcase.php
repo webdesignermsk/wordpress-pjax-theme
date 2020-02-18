@@ -43,7 +43,7 @@
                                 <?php the_content(); ?>
                             </div>
 
-                            <a href="<?php echo get_home_url().'/showcase'; ?>" class="btn-bg btn-bg--big blog-article__back-btn"><img class="btn-bg__arrow" src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-left.svg"> <?php _e('Back to showcases','blank-theme') ?></a>
+                            <a href="<?php echo get_home_url().'/showcase'; ?>" class="btn-bg btn-bg--big blog-article__back-btn"><img class="btn-bg__arrow" src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-left.svg"> <?php _e('Back to showcases','blank') ?></a>
                         </div>
                     </div>
                 </div>

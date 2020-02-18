@@ -1,9 +1,9 @@
 <?php
-add_action( 'after_setup_theme', 'blank-theme_setup' );
+add_action( 'after_setup_theme', 'blank_setup' );
 add_theme_support( 'custom-logo' );
 
-function blank-theme_setup(){
-	load_theme_textdomain( 'blank-theme', get_template_directory() . '/languages' );
+function blank_setup(){
+	load_theme_textdomain( 'blank', get_template_directory() . '/languages' );
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-thumbnails' );
@@ -13,15 +13,15 @@ function blank-theme_setup(){
 	//main menu
 	register_nav_menus(
 		array( 
-			'main-menu' => __( 'Main Menu', 'blank-theme' ),
-			'footer-menu' => __( 'Footer Menu', 'blank-theme') 
+			'main-menu' => __( 'Main Menu', 'blank' ),
+			'footer-menu' => __( 'Footer Menu', 'blank') 
 		)
 	);
 }
 
 //load scripts and css for scripts
-add_action( 'wp_enqueue_scripts', 'blank-theme_load_scripts' );
-function blank-theme_load_scripts(){
+add_action( 'wp_enqueue_scripts', 'blank_load_scripts' );
+function blank_load_scripts(){
 	
 	wp_enqueue_script( 'jquery' );
 
@@ -53,13 +53,13 @@ function blank-theme_load_scripts(){
 }
 
 
-add_action( 'comment_form_before', 'blank-theme_enqueue_comment_reply_script' );
-function blank-theme_enqueue_comment_reply_script(){
+add_action( 'comment_form_before', 'blank_enqueue_comment_reply_script' );
+function blank_enqueue_comment_reply_script(){
 	if ( get_option( 'thread_comments' ) ) { wp_enqueue_script( 'comment-reply' ); }
 }
 
-add_filter( 'the_title', 'blank-theme_title' );
-function blank-theme_title( $title ) {
+add_filter( 'the_title', 'blank_title' );
+function blank_title( $title ) {
 	if ( $title == '' ) {
 		return '&rarr;';
 	} else {
@@ -68,15 +68,15 @@ function blank-theme_title( $title ) {
 }
 
 
-add_filter( 'wp_title', 'blank-theme_filter_wp_title' );
-function blank-theme_filter_wp_title( $title ){
+add_filter( 'wp_title', 'blank_filter_wp_title' );
+function blank_filter_wp_title( $title ){
 	return $title . esc_attr( get_bloginfo( 'name' ) );
 }
 
-add_action( 'widgets_init', 'blank-theme_widgets_init' );
-function blank-theme_widgets_init(){
+add_action( 'widgets_init', 'blank_widgets_init' );
+function blank_widgets_init(){
 	register_sidebar( array (
-		'name' => __( 'Sidebar Widget Area', 'blank-theme' ),
+		'name' => __( 'Sidebar Widget Area', 'blank' ),
 		'id' => 'primary-widget-area',
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => "</li>",
@@ -85,14 +85,14 @@ function blank-theme_widgets_init(){
 	) );
 }
 
-function blank-theme_custom_pings( $comment ){
+function blank_custom_pings( $comment ){
 	$GLOBALS['comment'] = $comment;
 ?>
 <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>"><?php echo comment_author_link(); ?></li>
 <?php
 }
-add_filter( 'get_comments_number', 'blank-theme_comments_number' );
-function blank-theme_comments_number( $count )
+add_filter( 'get_comments_number', 'blank_comments_number' );
+function blank_comments_number( $count )
 {
 if ( !is_admin() ) {
 global $id;
@@ -137,7 +137,7 @@ function get_last_posts($num){
                 <div class="blog-archive__item__info">
                     <h2 class="txt--sm blog-archive__item__title"><?php echo $post->post_title; ?></h2>
                     <p class="blog-archive__item__excerpt"><?php echo excerpt(20,$post->ID); ?></p>
-                    <a href="<?php echo get_permalink( $post->ID ); ?>" class="link--underline blog-archive__item__link"><?php _e('Read more','blank-theme'); ?> <span class="blog-archive__item__link__arrow">►</span></a>
+                    <a href="<?php echo get_permalink( $post->ID ); ?>" class="link--underline blog-archive__item__link"><?php _e('Read more','blank'); ?> <span class="blog-archive__item__link__arrow">►</span></a>
                 </div>
             </div>
         </li>
@@ -183,27 +183,27 @@ function the_breadcrumb()
         echo '<a href="';
         echo get_option('home');
         echo '">';
-        _e('Home','blank-theme');
+        _e('Home','blank');
         echo '</a>' . $sep;
 	
 	// Check if the current page is a category, an archive or a single page. If so show the category or archive name.
         if (is_category() || is_single() ){
             if ( is_singular( 'showcase' ) ) {
-                echo '<a href="'.get_home_url().'/showcase">'.__('Showcase', 'blank-theme').'</a>';
+                echo '<a href="'.get_home_url().'/showcase">'.__('Showcase', 'blank').'</a>';
             } else{
-                echo '<a href="'.get_permalink( get_option( 'page_for_posts' ) ).'">'.__('Blog', 'blank-theme').'</a>';
+                echo '<a href="'.get_permalink( get_option( 'page_for_posts' ) ).'">'.__('Blog', 'blank').'</a>';
             }
         } elseif (is_archive() || is_single()){
             if ( is_day() ) {
-                printf( __( '%s', 'blank-theme' ), get_the_date() );
+                printf( __( '%s', 'blank' ), get_the_date() );
             } elseif ( is_month() ) {
-                printf( __( '%s', 'blank-theme' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'blank-theme' ) ) );
+                printf( __( '%s', 'blank' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'blank' ) ) );
             } elseif ( is_year() ) {
-                printf( __( '%s', 'blank-theme' ), get_the_date( _x( 'Y', 'yearly archives date format', 'blank-theme' ) ) );
+                printf( __( '%s', 'blank' ), get_the_date( _x( 'Y', 'yearly archives date format', 'blank' ) ) );
             } elseif(is_post_type_archive('showcase')){
-                _e( 'Showcase', 'blank-theme' );
+                _e( 'Showcase', 'blank' );
             } else {
-                _e( 'Blog', 'blank-theme' );
+                _e( 'Blog', 'blank' );
             }
         }
 	
@@ -287,8 +287,8 @@ function my_acf_blocks_init() {
         
         // register an image block
         /*acf_register_block(array(
-            'name'              => 'blank-theme-image',
-            'title'             => __('blank-theme Image'),
+            'name'              => 'blank-image',
+            'title'             => __('blank Image'),
             'description'       => __('A custom image block.'),
             'render_callback'   => 'my_acf_block_render_callback',
             'category'          => 'common',

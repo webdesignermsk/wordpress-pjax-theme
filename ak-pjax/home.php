@@ -13,7 +13,7 @@
 
                 <div class="container blog-archive">
                     <div class="row txt--center blog-archive__header">
-                        <h1 class="col-lg-10 col-md-12 offset-lg-1 offset-md-0 title"><?php _e('Our Blog','blank-theme'); ?></h1>
+                        <h1 class="col-lg-10 col-md-12 offset-lg-1 offset-md-0 title"><?php _e('Our Blog','blank'); ?></h1>
                         <?php
                         $blog_txt = get_field('blog_text','option');
                         if($blog_txt){
@@ -35,7 +35,7 @@
                                 <div class="blog-archive__item__info">
                                     <h2 class="txt--sm blog-archive__item__title"><?php the_title(); ?></h2>
                                     <p class="blog-archive__item__excerpt"><?php echo excerpt(20); ?></p>
-                                    <a href="<?php the_permalink(); ?>" class="link--underline blog-archive__item__link"><?php _e('Read more','blank-theme'); ?> <span class="blog-archive__item__link__arrow">►</span></a>
+                                    <a href="<?php the_permalink(); ?>" class="link--underline blog-archive__item__link"><?php _e('Read more','blank'); ?> <span class="blog-archive__item__link__arrow">►</span></a>
                                 </div>
                             </div>
                         </li>

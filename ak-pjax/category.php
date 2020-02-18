@@ -65,4 +65,4 @@
         </div>
     </div>
     <?php get_footer(); ?>
-<script src="/wp-content/themes/blank-theme/js/views/archieve.js"></script>
+<script src="/wp-content/themes/blank/js/views/archieve.js"></script>

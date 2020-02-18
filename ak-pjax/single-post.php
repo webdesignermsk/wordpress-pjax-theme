@@ -43,7 +43,7 @@
                                 <?php the_content(); ?>
                             </div>
 
-                            <a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>" class="btn-bg btn-bg--big blog-article__back-btn"><img class="btn-bg__arrow" src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-left.svg"> <?php _e('Back to blog','blank-theme') ?></a>
+                            <a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>" class="btn-bg btn-bg--big blog-article__back-btn"><img class="btn-bg__arrow" src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-left.svg"> <?php _e('Back to blog','blank') ?></a>
                         </div>
                     </div>
                 </div>
@@ -51,7 +51,7 @@
             
             <section id="recentPosts" class="container blog-archive blog-article__related">
                     <div class="row txt--center blog-archive__header">
-                        <h1 class="col-lg-10 col-md-12 offset-lg-1 offset-md-0 title"><?php _e('You May Also Like','blank-theme'); ?></h1>
+                        <h1 class="col-lg-10 col-md-12 offset-lg-1 offset-md-0 title"><?php _e('You May Also Like','blank'); ?></h1>
                     </div>
                     <?php echo get_last_posts(3); ?>
             </section>
